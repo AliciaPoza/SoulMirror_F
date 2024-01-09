@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.AccueilActivity">
+
     <ImageView
         android:id="@+id/img_logo"
         android:layout_width="wrap_content"
@@ -19,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/ic_logo_vf2_round" />
+
     <TextView
         android:id="@+id/txt_name"
         android:layout_width="wrap_content"
@@ -37,6 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/txt_reglement"
         android:layout_width="wrap_content"
@@ -53,6 +56,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.994" />
+
     <TextView
         android:id="@+id/txt_mentions"
         android:layout_width="wrap_content"
@@ -67,6 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.994" />
+
     <TextView
         android:id="@+id/txt_cgu"
         android:layout_width="wrap_content"
@@ -82,6 +87,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.994" />
+
     <ImageView
         android:id="@+id/imgUser"
         android:layout_width="wrap_content"
@@ -94,6 +100,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/user" />
+
     <ImageView
         android:id="@+id/imgSettings"
         android:layout_width="wrap_content"
@@ -106,6 +113,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/reglage" />
+
     <ImageView
         android:id="@+id/imgForum"
         android:layout_width="wrap_content"
@@ -117,6 +125,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.943"
         app:srcCompat="@drawable/forum_rose" />
+
     <ImageView
         android:id="@+id/imgAgenda"
         android:layout_width="wrap_content"
@@ -128,6 +137,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.943"
         app:srcCompat="@drawable/agenda" />
+
     <ImageView
         android:id="@+id/imgAjout"
         android:layout_width="wrap_content"
@@ -139,6 +149,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.943"
         app:srcCompat="@drawable/ajout" />
+
     <ImageView
         android:id="@+id/imgJournal"
         android:layout_width="wrap_content"
@@ -150,6 +161,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.943"
         app:srcCompat="@drawable/journal" />
+
     <ImageView
         android:id="@+id/imgMessagerie"
         android:layout_width="wrap_content"
@@ -164,13 +176,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSujets"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="88dp"
-        android:layout_marginBottom="110dp"
+        android:layout_width="410dp"
+        android:layout_height="533dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/row_sujets" />
+        app:layout_constraintVertical_bias="0.449" />
 </androidx.constraintlayout.widget.ConstraintLayout>

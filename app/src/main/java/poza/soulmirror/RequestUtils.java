@@ -1,5 +1,7 @@
 package poza.soulmirror;
 
+import org.json.JSONObject;
+
 import java.io.IOException;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -41,11 +43,14 @@ public class RequestUtils {
         void onVerificationSuccess();
         void onVerificationFailure();
     }
-    public static void envoyerSujet(String json) {
+    public static void envoyerSujet(int idUtilisateur, String json) {
         new Thread(() -> {
             try {
                 String url = (URL_API+"/sujets");
-                RequestUtils.sendPost(url, json);
+                JSONObject jsonObject = new JSONObject(json);
+                jsonObject.put("idUtilisateur", idUtilisateur);
+                String jsonAEnvoyer = jsonObject.toString();
+                RequestUtils.sendPost(url, jsonAEnvoyer);
             } catch (Exception e) {
                 e.printStackTrace();
             }

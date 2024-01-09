@@ -40,14 +40,14 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTxt_Pseudo"
+        android:id="@+id/editTxt_Mail"
         android:layout_width="200dp"
         android:layout_height="52dp"
         android:background="@drawable/bg_jaune"
         android:ems="10"
         android:fontFamily="@font/belleza"
-        android:hint="Pseudo"
-        android:inputType="text|textPersonName"
+        android:hint="Adresse mail"
+        android:inputType="textEmailAddress"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

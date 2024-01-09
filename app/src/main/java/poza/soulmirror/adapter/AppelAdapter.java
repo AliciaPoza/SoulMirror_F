@@ -52,8 +52,6 @@ public class AppelAdapter extends ListAdapter<AppelBean, AppelAdapter.ViewHolder
         }
 
         void bind(AppelBean item) {
-            binding.txtViewNomAppel.setText(item.getNomAppel());
-            binding.txtViewTelAppel.setText(item.getTelephoneAppel());
             binding.txtViewDesAppel.setText(item.getDescriptionAppel());
             binding.txtViewSiteAppel.setText(item.getSiteWebAppel());
             // Tu peux personnaliser l'affichage ici en utilisant les vues de binding

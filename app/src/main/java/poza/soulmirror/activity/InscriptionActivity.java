@@ -9,7 +9,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 
 import java.util.Arrays;
@@ -22,11 +26,12 @@ import poza.soulmirror.activity.ConnexionActivity;
 import poza.soulmirror.beans.UtilisateurBean;
 
 public class InscriptionActivity extends AppCompatActivity {
-
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
+        mAuth = FirebaseAuth.getInstance();
         // Mise en place du clic retour en arrière
         // Trouver l'imageButton par son ID
         ImageView retourButton = findViewById(R.id.imgBack);
@@ -44,14 +49,25 @@ public class InscriptionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Récupération des données de l'utilisateur
                 UtilisateurBean utilisateur = recupererTextes();
-                // Parse en JSON
-                Gson gson = new Gson();
-                String jsonUtilisateur = gson.toJson(utilisateur);
-                // Envoie des données au serveur
-                RequestUtils.envoyerUtilisateur(jsonUtilisateur);
-                // Redirige vers l'activité de connexion une fois l'inscription réussie
-                Intent intent = new Intent(InscriptionActivity.this, ConnexionActivity.class);
-                startActivity(intent);
+                // Inscription de l'utilisateur avec Firebase Auth
+                mAuth.createUserWithEmailAndPassword(utilisateur.getEmailUtilisateur(), utilisateur.getMotDePasseUtilisateur()).addOnCompleteListener(InscriptionActivity.this, task -> {
+                    if (task.isSuccessful()){
+                        // L'inscription à réussi
+                        Toast.makeText(InscriptionActivity.this, "Inscription réussie !", Toast.LENGTH_SHORT).show();
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        // Redirection vers l'activité de connexion une fois l'inscription réussi
+                        Intent intent = new Intent(InscriptionActivity.this, ConnexionActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        // L'inscription a échoué, affiche un message d'erreur
+                        if (task.getException() instanceof FirebaseAuthUserCollisionException){
+                            Toast.makeText(InscriptionActivity.this, "Ce compte existe déjà.",Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(InscriptionActivity.this, "L'inscription à échoué.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
     }
