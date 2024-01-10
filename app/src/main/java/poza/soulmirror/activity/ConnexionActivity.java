@@ -13,13 +13,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.gson.Gson;
-
-import org.json.JSONObject;
 
 import poza.soulmirror.R;
-import poza.soulmirror.RequestUtils;
-import poza.soulmirror.beans.UtilisateurBean;
 
 public class ConnexionActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -67,7 +62,7 @@ public class ConnexionActivity extends AppCompatActivity {
                    FirebaseUser user = mAuth.getCurrentUser();
                    if (user != null){
                        // rediriger vers Accueil
-                       Intent intent = new Intent(ConnexionActivity.this, AccueilActivity.class);
+                       Intent intent = new Intent(ConnexionActivity.this, ForumActivity.class);
                        startActivity(intent);
                        finish();
                    }

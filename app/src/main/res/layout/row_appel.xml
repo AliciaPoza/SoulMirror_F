@@ -2,19 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="412dp"
-        android:layout_height="200dp"
+        android:layout_width="409dp"
+        android:layout_height="211dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/white"
         android:foreground="@drawable/bg_white_border_black"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -24,7 +23,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/txtViewTitre"
+                android:id="@+id/txtViewCentre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alice"
@@ -40,10 +39,10 @@
                 app:layout_constraintVertical_bias="0.023" />
 
             <TextView
-                android:id="@+id/txtViewContenu"
+                android:id="@+id/txtViewNum"
                 android:layout_width="208dp"
                 android:layout_height="24dp"
-                android:fontFamily="@font/dosis"
+                android:fontFamily="@font/belleza"
                 android:text="Numéro de téléphone"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -57,7 +56,8 @@
                 android:id="@+id/txtViewDesAppel"
                 android:layout_width="366dp"
                 android:layout_height="49dp"
-                android:fontFamily="@font/dosis"
+                android:fontFamily="@font/belleza"
+                android:inputType="textMultiLine"
                 android:text="Description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -68,15 +68,17 @@
 
             <TextView
                 android:id="@+id/txtViewSiteAppel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="174dp"
+                android:layout_height="48dp"
+                android:fontFamily="@font/belleza"
+                android:inputType="textMultiLine"
                 android:text="Site web"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.081"
+                app:layout_constraintHorizontal_bias="0.121"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.801" />
+                app:layout_constraintVertical_bias="0.897" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

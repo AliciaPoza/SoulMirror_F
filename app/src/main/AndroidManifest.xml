@@ -44,7 +44,7 @@
             android:name=".activity.JournalActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.AccueilActivity"
+            android:name=".activity.ForumActivity"
             android:exported="false" />
         <activity
             android:name=".activity.FaireSignalementActivity"

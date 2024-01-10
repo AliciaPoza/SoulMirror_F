@@ -3,20 +3,14 @@ package poza.soulmirror.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-
 import poza.soulmirror.FirebaseUtils;
 import poza.soulmirror.R;
-import poza.soulmirror.RequestUtils;
-import poza.soulmirror.beans.InfoSujet;
 import poza.soulmirror.beans.SujetBean;
 
 public class CreationSujetActivity extends AppCompatActivity {
@@ -39,7 +33,7 @@ public class CreationSujetActivity extends AppCompatActivity {
         imgForum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CreationSujetActivity.this, AccueilActivity.class);
+                Intent intent = new Intent(CreationSujetActivity.this, ForumActivity.class);
                 startActivity(intent);
             }
         });
@@ -125,7 +119,7 @@ public class CreationSujetActivity extends AppCompatActivity {
                 if (etTitre != null) etTitre.setText("");
                 if(etContenu != null) etContenu.setText("");
                 // Aprés l'envoi réussi naviguer vers AccueilActivity
-                Intent intent = new Intent(CreationSujetActivity.this, AccueilActivity.class);
+                Intent intent = new Intent(CreationSujetActivity.this, ForumActivity.class);
                 startActivity(intent);
                 finish();
             });

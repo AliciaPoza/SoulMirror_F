@@ -4,29 +4,26 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import poza.soulmirror.FirebaseCallback;
 import poza.soulmirror.FirebaseUtils;
 import poza.soulmirror.R;
 import poza.soulmirror.adapter.SujetAdapter;
 import poza.soulmirror.beans.SujetBean;
-import poza.soulmirror.databinding.ActivityAccueilBinding;
-public class AccueilActivity extends AppCompatActivity {
-    private ActivityAccueilBinding binding = null;
+import poza.soulmirror.databinding.ActivityForumBinding;
+
+public class ForumActivity extends AppCompatActivity {
+    private ActivityForumBinding binding = null;
     private RecyclerView recyclerView;
     // Liste pour stocker les sujets
     private List<SujetBean> sujetList;
@@ -39,7 +36,7 @@ public class AccueilActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityAccueilBinding.inflate(getLayoutInflater());
+        binding = ActivityForumBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         recyclerView =findViewById(R.id.rvSujets);
         sujetList = new ArrayList<>();
@@ -80,7 +77,17 @@ public class AccueilActivity extends AppCompatActivity {
 
             }
         });
-
+        /* --------------------------- */
+        // Clic sur bouton Forum
+        /* --------------------------- */
+        ImageView imgForum = findViewById(R.id.imgForum);
+        imgForum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForumActivity.this, ForumActivity.class);
+                startActivity(intent);
+            }
+        });
         /* --------------------------- */
         // Clic sur Bouton Répertoire
         /* --------------------------- */
@@ -88,7 +95,7 @@ public class AccueilActivity extends AppCompatActivity {
         imgAgenda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AccueilActivity.this, RepertoireActivity.class);
+                Intent intent = new Intent(ForumActivity.this, RepertoireActivity.class);
                 startActivity(intent);
             }
         });
@@ -99,7 +106,62 @@ public class AccueilActivity extends AppCompatActivity {
         imgAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AccueilActivity.this, CreationSujetActivity.class);
+                Intent intent = new Intent(ForumActivity.this, CreationSujetActivity.class);
+                startActivity(intent);
+            }
+        });
+        /* --------------------------- */
+        // Clic sur bouton journal
+        /* --------------------------- */
+        ImageView imgJournal = findViewById(R.id.imgJournal);
+        imgJournal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForumActivity.this, JournalActivity.class);
+                startActivity(intent);
+            }
+        });
+        /* --------------------------- */
+        // Clic sur bouton messagerie
+        /* --------------------------- */
+        ImageView imgMessagerie = findViewById(R.id.imgMessagerie);
+        imgMessagerie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForumActivity.this, MessageActivity.class);
+                startActivity(intent);
+            }
+        });
+        /* --------------------------- */
+        // Clic sur logo
+        /* --------------------------- */
+        ImageView imgLogo = findViewById(R.id.imgLogo);
+        imgLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForumActivity.this, ForumActivity.class);
+                startActivity(intent);
+            }
+        });
+        /* --------------------------- */
+        // Clic sur User
+        /* --------------------------- */
+        ImageView imgCompte = findViewById(R.id.imgUser);
+        imgCompte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForumActivity.this, CompteActivity.class);
+                startActivity(intent);
+            }
+        });
+        /* --------------------------- */
+        // Clic sur réglages
+        /* --------------------------- */
+        ImageView imgReglage = findViewById(R.id.imgSettings);
+        imgReglage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ForumActivity.this, ReglageActivity.class);
                 startActivity(intent);
             }
         });
