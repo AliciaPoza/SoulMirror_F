@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinLayReper"
@@ -18,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/ic_logo_vf2_round" />
+        app:srcCompat="@mipmap/ic_logo_vf1_round" />
     <TextView
         android:id="@+id/txt_name"
         android:layout_width="wrap_content"
@@ -161,7 +162,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.943"
         app:srcCompat="@drawable/message" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAppels"
         android:layout_width="410dp"

@@ -53,57 +53,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.495" />
 
-            <ImageView
-                android:id="@+id/imgSignalement"
-                android:layout_width="34dp"
-                android:layout_height="36dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.965"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.022"
-                app:srcCompat="@drawable/signalement" />
-
-            <ImageView
-                android:id="@+id/imgAddComment"
-                android:layout_width="43dp"
-                android:layout_height="36dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.043"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.876"
-                app:srcCompat="@drawable/addcomment" />
-
-            <ImageView
-                android:id="@+id/imgNbComm"
-                android:layout_width="43dp"
-                android:layout_height="36dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.964"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.876"
-                app:srcCompat="@drawable/nbcommentaire" />
-
-            <TextView
-                android:id="@+id/txtViewNbComment"
-                android:layout_width="14dp"
-                android:layout_height="21dp"
-                android:fontFamily="@font/forum"
-                android:gravity="center"
-                android:text="12"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/imgNbComm"
-                app:layout_constraintEnd_toEndOf="@+id/imgNbComm"
-                app:layout_constraintHorizontal_bias="0.482"
-                app:layout_constraintStart_toStartOf="@+id/imgNbComm"
-                app:layout_constraintTop_toTopOf="@+id/imgNbComm"
-                app:layout_constraintVertical_bias="0.533" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 

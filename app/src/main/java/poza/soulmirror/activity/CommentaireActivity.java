@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import poza.soulmirror.R;
 
-public class SujetActivity extends AppCompatActivity {
+public class CommentaireActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sujet);
+        setContentView(R.layout.activity_commentaire);
     }
 }

@@ -28,11 +28,10 @@ import poza.soulmirror.databinding.ActivityRepertoireBinding;
 import poza.soulmirror.firebase.DonneesFirebase;
 
 public class RepertoireActivity extends AppCompatActivity {
-
     private ActivityRepertoireBinding binding = null;
     private RecyclerView recyclerView;
-    private AppelAdapter appelAdapter;
     private List<AppelBean> listeAppels;
+    private AppelAdapter appelAdapter;
     private FirebaseDatabase database;
     private DatabaseReference appelsRef;
     @Override
@@ -78,7 +77,6 @@ public class RepertoireActivity extends AppCompatActivity {
 
             }
         });
-
         /* --------------------------- */
         // Clic sur bouton Forum
         /* --------------------------- */
@@ -91,6 +89,17 @@ public class RepertoireActivity extends AppCompatActivity {
             }
         });
         /* --------------------------- */
+        // Clic sur Bouton Répertoire
+        /* --------------------------- */
+        ImageView imgAgenda = findViewById(R.id.imgAgenda);
+        imgAgenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RepertoireActivity.this, RepertoireActivity.class);
+                startActivity(intent);
+            }
+        });
+        /* --------------------------- */
         // Clic sur bouton +
         /* --------------------------- */
         ImageView imgAdd = findViewById(R.id.imgAjout);
@@ -98,6 +107,61 @@ public class RepertoireActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RepertoireActivity.this, CreationSujetActivity.class);
+                startActivity(intent);
+            }
+        });
+        /* --------------------------- */
+        // Clic sur bouton journal
+        /* --------------------------- */
+        ImageView imgJournal = findViewById(R.id.imgJournal);
+        imgJournal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RepertoireActivity.this, JournalActivity.class);
+                startActivity(intent);
+            }
+        });
+        /* --------------------------- */
+        // Clic sur bouton messagerie
+        /* --------------------------- */
+        ImageView imgMessagerie = findViewById(R.id.imgMessagerie);
+        imgMessagerie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RepertoireActivity.this, MessagerieActivity.class);
+                startActivity(intent);
+            }
+        });
+        /* --------------------------- */
+        // Clic sur logo
+        /* --------------------------- */
+        ImageView imgLogo = findViewById(R.id.imgLogo);
+        imgLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RepertoireActivity.this, ForumActivity.class);
+                startActivity(intent);
+            }
+        });
+        /* --------------------------- */
+        // Clic sur User
+        /* --------------------------- */
+        ImageView imgCompte = findViewById(R.id.imgUser);
+        imgCompte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RepertoireActivity.this, CompteActivity.class);
+                startActivity(intent);
+            }
+        });
+        /* --------------------------- */
+        // Clic sur réglages
+        /* --------------------------- */
+        ImageView imgReglage = findViewById(R.id.imgSettings);
+        imgReglage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RepertoireActivity.this, ReglageActivity.class);
                 startActivity(intent);
             }
         });
