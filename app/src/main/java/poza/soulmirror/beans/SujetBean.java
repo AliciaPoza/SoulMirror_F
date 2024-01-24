@@ -1,8 +1,4 @@
 package poza.soulmirror.beans;
-
-
-import java.util.Date;
-
 public class SujetBean {
     /* --------------------------- */
     // ATTRIBUTS
@@ -10,24 +6,20 @@ public class SujetBean {
     private String titreSujet;
     private String contenuSujet;
     private String idUtilisateur;
-
     /* --------------------------- */
     // CONSTRUCTEURS
     /* --------------------------- */
     public SujetBean() {
     }
-
     public SujetBean(String titreSujet, String contenuSujet, String idUtilisateur) {
         this.titreSujet = titreSujet;
         this.contenuSujet = contenuSujet;
         this.idUtilisateur = idUtilisateur;
     }
-
     public SujetBean(String titreSujet, String contenuSujet) {
         this.titreSujet = titreSujet;
         this.contenuSujet = contenuSujet;
     }
-
     /* --------------------------- */
     // GETTERS / SETTERS
     /* --------------------------- */
@@ -43,11 +35,9 @@ public class SujetBean {
     public void setContenuSujet(String contenuSujet) {
         this.contenuSujet = contenuSujet;
     }
-
     public String getIdUtilisateur() {
         return idUtilisateur;
     }
-
     public void setIdUtilisateur(String idUtilisateur) {
         this.idUtilisateur = idUtilisateur;
     }
